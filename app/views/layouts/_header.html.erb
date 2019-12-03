@@ -6,6 +6,21 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+    <%= link_to 'Novogradnja', new_user_registration_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+    <%= link_to 'Montažne hiše', new_user_registration_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+    <%= link_to 'Počitnice', new_user_registration_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+    <%= link_to 'Dom', new_user_registration_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+    <%= link_to 'Podjetja', new_user_registration_path, class: 'nav-link' %>
+    </li>
     <% if current_user %>
 
         <li class="nav-item dropdown">
@@ -31,14 +46,11 @@
 
     <% end %>
 
-
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
+      
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
