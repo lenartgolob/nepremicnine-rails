@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  opis1: MyText
+  opis2: MyText
+  naslov: MyString
+  objava: 2019-12-04 08:44:06
+  posredovanje: MyString
+  vrsta: MyString
+  lokacija: MyString
+  telefon: MyString
+  tip: MyString
+  velikost: 
+  parcela: 
+  cena: 
+  user: one
+
+two:
+  opis1: MyText
+  opis2: MyText
+  naslov: MyString
+  objava: 2019-12-04 08:44:06
+  posredovanje: MyString
+  vrsta: MyString
+  lokacija: MyString
+  telefon: MyString
+  tip: MyString
+  velikost: 
+  parcela: 
+  cena: 
+  user: two

@@ -1,0 +1,82 @@
+<%= form_with(model: estate, local: true) do |form| %>
+  <% if estate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estate.errors.count, "error") %> prohibited this estate from being saved:</h2>
+
+      <ul>
+        <% estate.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :opis1 %>
+    <%= form.text_area :opis1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opis2 %>
+    <%= form.text_area :opis2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :naslov %>
+    <%= form.text_field :naslov %>
+  </div>
+
+  <div class="field">
+    <%= form.label :objava %>
+    <%= form.datetime_select :objava %>
+  </div>
+
+  <div class="field">
+    <%= form.label :posredovanje %>
+    <%= form.text_field :posredovanje %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vrsta %>
+    <%= form.text_field :vrsta %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lokacija %>
+    <%= form.text_field :lokacija %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefon %>
+    <%= form.text_field :telefon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tip %>
+    <%= form.text_field :tip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :velikost %>
+    <%= form.text_field :velikost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parcela %>
+    <%= form.text_field :parcela %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cena %>
+    <%= form.text_field :cena %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

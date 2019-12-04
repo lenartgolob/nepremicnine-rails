@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Estates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Opis1</th>
+      <th>Opis2</th>
+      <th>Naslov</th>
+      <th>Objava</th>
+      <th>Posredovanje</th>
+      <th>Vrsta</th>
+      <th>Lokacija</th>
+      <th>Telefon</th>
+      <th>Tip</th>
+      <th>Velikost</th>
+      <th>Parcela</th>
+      <th>Cena</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estates.each do |estate| %>
+      <tr>
+        <td><%= estate.opis1 %></td>
+        <td><%= estate.opis2 %></td>
+        <td><%= estate.naslov %></td>
+        <td><%= estate.objava %></td>
+        <td><%= estate.posredovanje %></td>
+        <td><%= estate.vrsta %></td>
+        <td><%= estate.lokacija %></td>
+        <td><%= estate.telefon %></td>
+        <td><%= estate.tip %></td>
+        <td><%= estate.velikost %></td>
+        <td><%= estate.parcela %></td>
+        <td><%= estate.cena %></td>
+        <td><%= estate.user_id %></td>
+        <td><%= link_to 'Show', estate %></td>
+        <td><%= link_to 'Edit', edit_estate_path(estate) %></td>
+        <td><%= link_to 'Destroy', estate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Estate', new_estate_path %>
