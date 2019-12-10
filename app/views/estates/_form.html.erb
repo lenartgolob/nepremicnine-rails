@@ -1,82 +1,118 @@
-<%= form_with(model: estate, local: true) do |form| %>
-  <% if estate.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(estate.errors.count, "error") %> prohibited this estate from being saved:</h2>
+<div>
+<div class="col-md-6 form-align">
+        <div class="card">
+            <div class="card-header"><h5>Objavi oglas</h5><p></p></div>
+            <div class="card-body">
+              <%= form_with(model: estate, local: true) do |form| %>
+                <% if estate.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(estate.errors.count, "error") %> prohibited this estate from being saved:</h2>
 
-      <ul>
-        <% estate.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+                    <ul>
+                      <% estate.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+                
+                <div class="form-group row">
+                  <%= form.label :posredovanje,class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                  <%= form.text_field :posredovanje, class: "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :ime, class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_field :ime, class: "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :vrsta, class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_field :vrsta, class: "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :tip, class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_field :tip, class: "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :naslov, class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_field :naslov, class: "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :lokacija, class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_field :lokacija, class: "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :telefon, class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_field :telefon, class: "form-control" %>
+                  </div>
+                </div>
+
+              <div class="form-group row">
+              <%= form.label :velikost, class: "col-md-4 col-form-label text-md-right" %>
+              <div class="col-md-6">
+                <%= form.text_field :velikost, class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="form-group row">
+            <%= form.label :parcela, class: "col-md-4 col-form-label text-md-right" %>
+            <div class="col-md-6">
+              <%= form.text_field :parcela, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+          <%= form.label :cena, class: "col-md-4 col-form-label text-md-right" %>
+          <div class="col-md-6">
+            <%= form.text_field :cena, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+        <%= form.label :opis1, class: "col-md-4 col-form-label text-md-right" %>
+        <div class="col-md-6">
+          <%= form.text_field :opis1, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+      <%= form.label :opis2, class: "col-md-4 col-form-label text-md-right" %>
+      <div class="col-md-6">
+        <%= form.text_field :opis2, class: "form-control" %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :opis1 %>
-    <%= form.text_area :opis1 %>
-  </div>
 
-  <div class="field">
-    <%= form.label :opis2 %>
-    <%= form.text_area :opis2 %>
-  </div>
 
-  <div class="field">
-    <%= form.label :naslov %>
-    <%= form.text_field :naslov %>
-  </div>
 
-  <div class="field">
-    <%= form.label :objava %>
-    <%= form.datetime_select :objava %>
-  </div>
 
-  <div class="field">
-    <%= form.label :posredovanje %>
-    <%= form.text_field :posredovanje %>
-  </div>
 
-  <div class="field">
-    <%= form.label :vrsta %>
-    <%= form.text_field :vrsta %>
-  </div>
+                <div class="actions col-md-6 offset-md-4">
+                  <%= form.submit "Objavi", class: "btn btn-primary" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :lokacija %>
-    <%= form.text_field :lokacija %>
-  </div>
 
-  <div class="field">
-    <%= form.label :telefon %>
-    <%= form.text_field :telefon %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tip %>
-    <%= form.text_field :tip %>
-  </div>
-
-  <div class="field">
-    <%= form.label :velikost %>
-    <%= form.text_field :velikost %>
-  </div>
-
-  <div class="field">
-    <%= form.label :parcela %>
-    <%= form.text_field :parcela %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cena %>
-    <%= form.text_field :cena %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
