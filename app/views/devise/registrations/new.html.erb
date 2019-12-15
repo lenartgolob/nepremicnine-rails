@@ -9,7 +9,17 @@
           <%= render "devise/shared/error_messages", resource: resource %>
 
           <div class="form-label-group">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email", id: "inputEmail" %>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "Ime", id: "inputName" %>
+            <%= f.label :name, for: "inputName" %>
+          </div>
+
+          <div class="form-label-group">
+            <%= f.text_field :lastname, autofocus: true, autocomplete: "lastname", class: "form-control", placeholder: "Priimek", id: "inputLastname" %>
+            <%= f.label :lastname, for: "inputLastname" %>
+          </div>
+
+          <div class="form-label-group">
+            <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "Email", id: "inputEmail" %>
             <%= f.label :email, for: "inputEmail" %>
           </div>
 

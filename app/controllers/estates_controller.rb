@@ -1,5 +1,7 @@
 class EstatesController < ApplicationController
   before_action :set_estate, only: [:show, :edit, :update, :destroy]
+  before_action :can_access?, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
 
   # GET /estates
   # GET /estates.json
@@ -25,6 +27,7 @@ class EstatesController < ApplicationController
   # POST /estates.json
   def create
     @estate = Estate.new(estate_params)
+    @estate.user = current_user
 
     respond_to do |format|
       if @estate.save
@@ -65,6 +68,10 @@ class EstatesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_estate
       @estate = Estate.find(params[:id])
+    end
+
+    def can_access?
+      redirect_back fallback_location: root_path, alert: 'You shall not pass!' unless @estate.user == current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

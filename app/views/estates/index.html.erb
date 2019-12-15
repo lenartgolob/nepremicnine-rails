@@ -38,9 +38,8 @@
         <td><%= estate.parcela %></td>
         <td><%= estate.cena %></td>
         <td><%= estate.user_id %></td>
-        <td><%= link_to 'Show', estate %></td>
-        <td><%= link_to 'Edit', edit_estate_path(estate) %></td>
-        <td><%= link_to 'Destroy', estate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%= show_estate_buttons(estate) %>
+
       </tr>
     <% end %>
   </tbody>

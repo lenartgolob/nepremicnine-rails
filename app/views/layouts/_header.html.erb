@@ -28,8 +28,8 @@
             Moj profil
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <%= link_to 'Moj profil', edit_user_registration_path, class: 'dropdown-item' %>
+            <%= link_to 'Moje objave', edit_user_registration_path, class: 'dropdown-item' %>
             <div class="dropdown-divider"></div>
             <%= link_to 'Odjava', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>        
             </div>
