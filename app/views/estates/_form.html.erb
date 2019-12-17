@@ -19,7 +19,7 @@
                 <div class="form-group row">
                   <%= form.label :posredovanje, 'Vrsta posredovanja:',class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
-                  <%= form.text_field :posredovanje, class: "form-control" %>
+                    <%= form.select(:posredovanje, [['Prodaja', 'prodaja'], ['Nakup', 'nakup'], ['Oddaja', 'oddaja'], ['Najem', 'najem']], {}, { :class => 'form-control', :autofocus => 'true'}) %>
                   </div>
                 </div>
 
@@ -76,6 +76,13 @@
                 </div>
 
                 <div class="form-group row">
+                  <%= form.label :naslov, 'Kraj:', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.select(:kraj, ['Ajdovščina', 'Bled', 'Brežice', 'Celje', 'Cerknica', 'Črnomelj', 'Domžale', 'Dravograd', 'Gornja Radgona', 'Grosuplje', 'Hrastnik', 'Idrija', 'Ilirska Bistrica', 'Izola', 'Jesenice', 'Kamnik', 'Kočevje', 'Koper', 'Kranj', 'Krško', 'Laško', 'Lendava', 'Litija', 'Ljubljana', 'Ljutomer', 'Logatec', 'Maribor', 'Medvode', 'Mengeš', 'Metlika', 'Mežica', 'Murska Sobota', 'Nova Gorica', 'Novo mesto', 'Piran', 'Postojna', 'Prevalje', 'Ptuj', 'Radovljica', 'Ravne na Koroškem', 'Ribnica', 'Rogaška Slatina', 'Sežana', 'Slovenj Gradec', 'Šentjur', 'Tolmin', 'Tržič', 'Velenje', 'Žalec', 'Železniki', 'Žiri'], {}, { :class => 'form-control'}) %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
                   <%= form.label :lokacija, 'Lokacija (dodaten opis lokacije):', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
                     <%= form.text_field :lokacija, class: "form-control" %>
@@ -83,7 +90,7 @@
                 </div>
 
                 <div class="form-group row">
-                  <%= form.label :telefon, 'telefonska številka:', class: "col-md-4 col-form-label text-md-right" %>
+                  <%= form.label :telefon, 'Telefonska številka:', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
                     <%= form.text_field :telefon, class: "form-control" %>
                   </div>
