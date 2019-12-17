@@ -138,3 +138,11 @@ body {
 .sbmt {
     margin-left: 50px !important;
 }
+
+.border {
+  border: 3px black solid !important;
+}
+
+.centrirano {
+  margin: 0 auto !important;
+}

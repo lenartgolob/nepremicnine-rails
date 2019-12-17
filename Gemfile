@@ -52,3 +52,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # custom
 gem 'devise'
+
+gem "mini_magick"
