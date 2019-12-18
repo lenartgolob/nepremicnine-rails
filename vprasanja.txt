@@ -1,6 +1,5 @@
 Vprašanja
 
 Kako na estate/index dobimo eno sliko
-kako dobimo podatke od current userja
 Negre spremenit velikosti fonta
 Kako nardit da footer ostane na dnu

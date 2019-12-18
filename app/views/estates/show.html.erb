@@ -23,9 +23,9 @@
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <% (0 ... @estate.images.count).each do |image| %>
+    <% (0 ... @estate.images.count).each_with_index do |image, index| %>
 
-      <div class="carousel-item active">
+      <div class="carousel-item  <%= 'active' if index == 0 %>">
         <%= image_tag(@estate.images[image], class: 'd-block w-100') %>
       </div>
 
@@ -40,7 +40,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
+<br>
 <p>
   <%= @estate.opis1 %>
 </p>

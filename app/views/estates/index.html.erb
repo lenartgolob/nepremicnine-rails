@@ -16,7 +16,11 @@
       <% @estates.each do |estate| %>
         <tr>
           <td>
-          "aaa"
+          <% (0 ... 1).each do |image| %>
+
+              <%= image_tag(estate.images[image], class: 'thumbnail') %>
+      
+          <% end %>
           </td>
           <td><%= estate.ime %></td>
           <td><%= estate.kraj %></td>

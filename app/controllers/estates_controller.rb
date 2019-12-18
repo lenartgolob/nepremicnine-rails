@@ -9,6 +9,10 @@ class EstatesController < ApplicationController
     @estates = Estate.all
   end
 
+  def novogradnja
+    @estates = Estate.where(id: 2)
+  end
+
   # GET /estates/1
   # GET /estates/1.json
   def show
