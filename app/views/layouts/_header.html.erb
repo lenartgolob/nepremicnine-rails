@@ -7,19 +7,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-    <%= link_to 'Novogradnja', new_user_registration_path, class: 'nav-link' %>
+    <%= link_to 'Novogradnja', novogradnja_path, class: 'nav-link' %>
     </li>
     <li class="nav-item">
-    <%= link_to 'Montažne hiše', new_user_registration_path, class: 'nav-link' %>
+    <%= link_to 'Montažne hiše', montazna_path, class: 'nav-link' %>
     </li>
     <li class="nav-item">
-    <%= link_to 'Počitnice', new_user_registration_path, class: 'nav-link' %>
+    <%= link_to 'Počitnice', pocitniski_path, class: 'nav-link' %>
     </li>
     <li class="nav-item">
-    <%= link_to 'Dom', new_user_registration_path, class: 'nav-link' %>
+    <%= link_to 'Dom', hisa_path, class: 'nav-link' %>
     </li>
     <li class="nav-item">
-    <%= link_to 'Podjetja', new_user_registration_path, class: 'nav-link' %>
+    <%= link_to 'Podjetja', poslovni_path, class: 'nav-link' %>
     </li>
     <% if current_user %>
 
@@ -29,7 +29,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to 'Moj profil', edit_user_registration_path, class: 'dropdown-item' %>
-            <%= link_to 'Moje objave', edit_user_registration_path, class: 'dropdown-item' %>
+            <%= link_to 'Moje objave', my_estates_path, class: 'dropdown-item' %>
             <div class="dropdown-divider"></div>
             <%= link_to 'Odjava', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>        
             </div>
@@ -37,12 +37,7 @@
 
     <% else %>
 
-        <li class="nav-item">
-        <%= link_to 'Prijava', new_user_session_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-        <%= link_to 'Registracija', new_user_registration_path, class: 'nav-link' %>
-        </li>
+
 
     <% end %>
 

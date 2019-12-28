@@ -39,7 +39,7 @@
                       <td><%= form.radio_button :vrsta, 'hisa' %> Hiša </td>
                       <td><%= form.radio_button :vrsta, 'montazna' %> Montažna hiša </td>
                     </tr>
-                      <td><%= form.radio_button :vrsta, 'vikend' %> Vikend </td>
+                      <td><%= form.radio_button :vrsta, 'pocitniski' %> Vikend </td>
                       <td><%= form.radio_button :vrsta, 'pocitniski' %> Počitniški objekt </td>
                       <td><%= form.radio_button :vrsta, 'poslovni' %> Poslovni prostor </td>
                     <tr>
@@ -120,7 +120,7 @@
                 <div class="form-group row">
                   <%= form.label :opis1, 'Opis (krajši paragraf - 100 znakov):', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
-                    <%= form.text_area :opis1, class: "form-control" %>
+                    <%= form.text_area :opis1, class: "form-control", :maxlength => 100 %>
                   </div>
                 </div>
 

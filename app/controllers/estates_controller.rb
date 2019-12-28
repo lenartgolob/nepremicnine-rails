@@ -3,14 +3,36 @@ class EstatesController < ApplicationController
   before_action :can_access?, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
 
+
   # GET /estates
   # GET /estates.json
   def index
     @estates = Estate.all
   end
 
+  def my_estates
+    @estates = Estate.where(:user_id => current_user.id)
+
+  end
+
   def novogradnja
-    @estates = Estate.where(id: 2)
+    @estates = Estate.where(vrsta: "novogradnja")
+  end
+
+  def hisa
+    @estates = Estate.where(vrsta: "hisa")
+  end
+
+  def montazna
+    @estates = Estate.where(vrsta: "montazna")
+  end
+
+  def pocitniski
+    @estates = Estate.where(vrsta: "pocitniski")
+  end
+
+  def poslovni
+    @estates = Estate.where(vrsta: "poslovni")
   end
 
   # GET /estates/1
