@@ -17,5 +17,7 @@ Rails.application.routes.draw do
 
   get 'poslovni_objekti' => 'estates#poslovni', as: :poslovni
 
+  get "pages/modal" => 'pages#modal', :as => :modal
+
 
 end

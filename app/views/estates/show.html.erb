@@ -1,5 +1,5 @@
 <br>
-<div class="container bigger">
+<div class="container">
 <h4 class="font-weight-normal">
   <%= @estate.ime %>
 </h4>
@@ -21,11 +21,11 @@
   <p>Za najem se išče <%= @estate.tip %>, ki je velika okoli <%= @estate.velikost %> m<sup>2</sup>, nahaja se v okolici <%= @estate.naslov %>, parcela pa je velika okoli <%= @estate.parcela %> m<sup>2</sup>, znesek, ki ga ponujam je  <%= @estate.cena %> € na mesec. Spodnja slika je simbolična oz. približek željene nepremičnine.</p>
 <% end %>
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide img" data-ride="carousel">
   <div class="carousel-inner">
     <% (0 ... @estate.images.count).each_with_index do |image, index| %>
 
-      <div class="carousel-item  <%= 'active' if index == 0 %>">
+      <div class="carousel-item <%= 'active' if index == 0 %>">
         <%= image_tag(@estate.images[image], class: 'd-block w-100') %>
       </div>
 
@@ -41,10 +41,10 @@
   </a>
 </div>
 <br>
-<p>
+<p class= "text-justify">
   <%= @estate.opis1 %>
 </p>
-<p>
+<p class= "text-justify">
   <%= @estate.opis2 %>
 </p>
 
