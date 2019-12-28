@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
-
 
 <h1>Estates</h1>
   <table class="table table-hover miza">
     <thead>
       <tr>
-          <th>Slika</th>
-          <th>Ime</th>
-          <th>Kraj</th>
-          <th>Status</th>
+          <th class="cell">Slika</th>
+          <th class="cell">Ime</th>
+          <th class="cell">Kraj</th>
+          <th class="cell">Status</th>
       </tr>
     </thead>
 
@@ -18,11 +16,11 @@
           <td>
           <% (0 ... 1).each do |image| %>
 
-              <%= image_tag(estate.images[image], class: 'thumbnail') %>
+              <%= link_to image_tag(estate.images[image], class: 'thumbnail'), estate %>
       
           <% end %>
           </td>
-          <td><%= estate.ime %></td>
+          <td><%= link_to estate.ime, estate %></td>
           <td><%= estate.kraj %></td>
           <td><%= estate.posredovanje %></td>
           <%= show_estate_buttons(estate) %>
@@ -32,5 +30,7 @@
     </tbody>
   </table>
 <br>
+
+
 
 <%= link_to 'New Estate', new_estate_path %>

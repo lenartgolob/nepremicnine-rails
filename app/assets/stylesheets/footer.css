@@ -18,3 +18,9 @@ footer {
     padding: 1rem;
 
   } */
+
+
+footer {
+  height: 75px !important;
+  padding-top: 25px !important;
+}
