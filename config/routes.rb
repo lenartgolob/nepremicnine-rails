@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#index'
   get '/estates/#/novogradnja', to: 'estates#novogradnja'
 
-  devise_for :users
-
   get 'my_estates' => 'estates#my_estates', as: :my_estates
 
   get 'novogradnje' => 'estates#novogradnja', as: :novogradnja
@@ -18,6 +16,9 @@ Rails.application.routes.draw do
   get 'poslovni_objekti' => 'estates#poslovni', as: :poslovni
 
   get "pages/modal" => 'pages#modal', :as => :modal
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
 
 
 end
