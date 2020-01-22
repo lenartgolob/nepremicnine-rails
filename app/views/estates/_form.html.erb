@@ -24,9 +24,9 @@
                 </div>
 
                 <div class="form-group row">
-                  <%= form.label :ime, 'Naslov oglasa:', class: "col-md-4 col-form-label text-md-right" %>
+                  <%= form.label :ime, 'Naslov oglasa:', class: "col-md-4 col-form-label text-md-right", :required => true %>
                   <div class="col-md-6">
-                    <%= form.text_field :ime, class: "form-control" %>
+                    <%= form.text_field :ime, class: "form-control", :required => true %>
                   </div>
                 </div>
 
@@ -71,7 +71,7 @@
                 <div class="form-group row">
                   <%= form.label :naslov, 'Naslov nepremičnine:', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
-                    <%= form.text_field :naslov, class: "form-control" %>
+                    <%= form.text_field :naslov, class: "form-control", :required => true %>
                   </div>
                 </div>
 
@@ -85,56 +85,56 @@
                 <div class="form-group row">
                   <%= form.label :lokacija, 'Lokacija (dodaten opis lokacije):', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
-                    <%= form.text_field :lokacija, class: "form-control" %>
+                    <%= form.text_field :lokacija, class: "form-control", :required => true %>
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <%= form.label :telefon, 'Telefonska številka:', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
-                    <%= form.text_field :telefon, class: "form-control" %>
+                    <%= form.text_field :telefon, class: "form-control", :required => true %>
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <%= form.label :velikost, 'Velikost nepremicnine (m2):', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
-                    <%= form.text_field :velikost, class: "form-control" %>
+                    <%= form.text_field :velikost, class: "form-control", :required => true %>
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <%= form.label :parcela, 'Parcela (m2):', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
-                    <%= form.text_field :parcela, class: "form-control" %>
+                    <%= form.text_field :parcela, class: "form-control", :required => true %>
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <%= form.label :cena, 'Cena:', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
-                    <%= form.text_field :cena, class: "form-control" %>
+                    <%= form.text_field :cena, class: "form-control", :required => true %>
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <%= form.label :opis1, 'Opis (krajši paragraf - 100 znakov):', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
-                    <%= form.text_area :opis1, class: "form-control", :maxlength => 500 %>
+                    <%= form.text_area :opis1, class: "form-control", :maxlength => 100, :required => true %>
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <%= form.label :opis2, 'Opis (daljši paragraf):', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
-                    <%= form.text_area :opis2, class: "form-control" %>
+                    <%= form.text_area :opis2, class: "form-control", :required => true %>
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <%= form.label :images, 'Slike:', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
-                    <%= form.file_field :images, multiple: true, class: "form-control" %>
+                    <%= form.file_field :images, multiple: true, class: "form-control", :required => true %>
                   </div>
                 </div>
 
