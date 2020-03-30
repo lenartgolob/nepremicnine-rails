@@ -1,0 +1,156 @@
+<div>
+<div class="col-md-8 form-align">
+        <div class="card">
+            <div class="card-header"><h5>Objavi oglas</h5><p></p></div>
+            <div class="card-body">
+              <%= form_with(model: estate, local: true) do |form| %>
+                <% if estate.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(estate.errors.count, "error") %> prohibited this estate from being saved:</h2>
+
+                    <ul>
+                      <% estate.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+                
+                <div class="form-group row">
+                  <%= form.label :posredovanje, 'Vrsta posredovanja:',class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.select(:posredovanje, ['Prodaja', 'Nakup', 'Oddaja', 'Najem'], {}, { :class => 'form-control', :autofocus => 'true'}) %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :ime, 'Naslov oglasa:', class: "col-md-4 col-form-label text-md-right", :required => true %>
+                  <div class="col-md-6">
+                    <%= form.text_field :ime, class: "form-control", :required => true %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :vrsta, 'Vrsta nepremičnine:', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <table width="100%">
+                    <tr>
+                    <td><%= form.radio_button :vrsta, 'novogradnja', :checked => true %> Novogradnja </td>
+                      <td><%= form.radio_button :vrsta, 'hisa' %> Hiša </td>
+                      <td><%= form.radio_button :vrsta, 'montazna' %> Montažna hiša </td>
+                    </tr>
+                      <td><%= form.radio_button :vrsta, 'pocitniski' %> Vikend </td>
+                      <td><%= form.radio_button :vrsta, 'pocitniski' %> Počitniški objekt </td>
+                      <td><%= form.radio_button :vrsta, 'poslovni' %> Poslovni prostor </td>
+                    <tr>
+                    </tr>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :tip, 'Tip nepremičnine:', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <table width="100%">
+                    <tr>
+                      <td><%= form.radio_button :tip, 'soba', :checked => true %> Soba </td>
+                      <td><%= form.radio_button :tip, 'garsonjera' %> Garsonjera </td>
+                      <td><%= form.radio_button :tip, '2-sobna nepremičnina' %> 2-sobno </td>
+                      <td><%= form.radio_button :tip, '3-sobna nepremičnina' %> 3-sobno </td>
+                    </tr>
+                      <td><%= form.radio_button :tip, '4-sobna nepremicnina' %> 4-sobno </td>
+                      <td><%= form.radio_button :tip, '5 in večsobna nepremičnina' %> 5 in večsobno </td>
+                      <td><%= form.radio_button :tip, 'nepremičnina tipa apartma' %> Apartma </td>
+                      <td><%= form.radio_button :tip, 'nepremičnina' %> Drugo </td>
+                    <tr>
+                    </tr>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :naslov, 'Naslov nepremičnine:', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_field :naslov, class: "form-control", :required => true %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :naslov, 'Kraj:', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.select(:kraj, ['Ajdovščina', 'Bled', 'Brežice', 'Celje', 'Cerknica', 'Črnomelj', 'Domžale', 'Dravograd', 'Gornja Radgona', 'Grosuplje', 'Hrastnik', 'Idrija', 'Ilirska Bistrica', 'Izola', 'Jesenice', 'Kamnik', 'Kočevje', 'Koper', 'Kranj', 'Krško', 'Laško', 'Lendava', 'Litija', 'Ljubljana', 'Ljutomer', 'Logatec', 'Maribor', 'Medvode', 'Mengeš', 'Metlika', 'Mežica', 'Murska Sobota', 'Nova Gorica', 'Novo mesto', 'Piran', 'Postojna', 'Prevalje', 'Ptuj', 'Radovljica', 'Ravne na Koroškem', 'Ribnica', 'Rogaška Slatina', 'Sežana', 'Slovenj Gradec', 'Šentjur', 'Tolmin', 'Tržič', 'Velenje', 'Žalec', 'Železniki', 'Žiri'], {}, { :class => 'form-control'}) %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :lokacija, 'Lokacija (dodaten opis lokacije):', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_field :lokacija, class: "form-control", :required => true %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :telefon, 'Telefonska številka:', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_field :telefon, class: "form-control", :required => true %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :velikost, 'Velikost nepremicnine (m2):', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_field :velikost, class: "form-control", :required => true %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :parcela, 'Parcela (m2):', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_field :parcela, class: "form-control", :required => true %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :cena, 'Cena:', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_field :cena, class: "form-control", :required => true %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :opis1, 'Opis (krajši paragraf - 100 znakov):', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_area :opis1, class: "form-control", :maxlength => 100, :required => true %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :opis2, 'Opis (daljši paragraf):', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.text_area :opis2, class: "form-control", :required => true %>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <%= form.label :images, 'Slike:', class: "col-md-4 col-form-label text-md-right" %>
+                  <div class="col-md-6">
+                    <%= form.file_field :images, multiple: true, class: "form-control", :required => true %>
+                  </div>
+                </div>
+
+
+
+
+
+
+                <div class="actions col-md-6 offset-md-4">
+                  <%= form.submit "Objavi", class: "btn btn-primary" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+

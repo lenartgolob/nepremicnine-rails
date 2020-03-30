@@ -1,0 +1,38 @@
+<br><br>
+<% if @estates.present? %> 
+  <table class="table table-hover miza">
+    <thead>
+      <tr>
+          <th class="cell">Slika</th>
+          <th class="cell">Ime</th>
+          <th class="cell">Kraj</th>
+          <th class="cell">Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @estates.each do |estate| %>
+        <tr>
+          <td>
+          <% (0 ... 1).each do |image| %>
+
+              <%= link_to image_tag(estate.images[image], class: 'thumbnail'), estate %>
+      
+          <% end %>
+          </td>
+          <td><%= link_to estate.ime, estate %></td>
+          <td><%= estate.kraj %></td>
+          <td><%= estate.posredovanje %></td>
+          <%= show_estate_buttons(estate) %>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<br>
+
+<%= link_to 'New Estate', new_estate_path %>
+
+<% else %>
+    <p>Ta kategorija nima nepremičnin</p>
+<% end %>

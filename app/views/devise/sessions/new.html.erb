@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+<div class="container">
+<div class="row">
+  <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+    <div class="card card-signin my-5">
+      <div class="card-body">
+        <h5 class="card-title text-center">Log in</h5>
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-signin") do |f| %>
+            <div class="form-label-group">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email", id: "inputEmail" %>
+              <%= f.label :email, for: "inputEmail" %>
+            </div>
+
+            <div class="form-label-group">
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password", id: "inputPassword" %>
+              <%= f.label :password, for: "inputPassword" %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+              <div class="custom-control custom-checkbox mb-3">
+                <%= f.check_box :remember_me, class: "custom-control-input", id: "customCheck1" %>
+                <%= f.label :remember_me, class: "custom-control-label", for: "customCheck1" %>
+              </div>
+            <% end %>
+
+            <div class="actions">
+              <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block text-uppercase" %>
+            </div>
+          <% end %>
+          <hr class="my-4">
+          <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class: 'btn btn-lg btn-google btn-block text-uppercase' %>
+          <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: 'btn btn-lg btn-facebook btn-block text-uppercase' %>
+
+          <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+

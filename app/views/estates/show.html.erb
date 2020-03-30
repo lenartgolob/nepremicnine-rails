@@ -1,0 +1,67 @@
+<br>
+<div class="container">
+<h4 class="font-weight-normal">
+  <%= @estate.ime %>
+</h4>
+
+<h6 class="text-muted font-weight-light">
+  <%= @estate.lokacija %>
+</h6>
+
+<% if @estate.posredovanje == "Prodaja"%>
+  <p>Naprodaj je  <%= @estate.tip %>, ki je velika <%= @estate.velikost %> m<sup>2</sup>, nahaja se na naslovu <%= @estate.naslov %>, parcela pa je velika <%= @estate.parcela %> m<sup>2</sup>, ki je na voljo za <%= @estate.cena %> €.</p>
+<% end %>
+<% if @estate.posredovanje == "Nakup"%>
+  <p>Za nakup se išče <%= @estate.tip %>, ki je velika okoli <%= @estate.velikost %> m<sup>2</sup>, nahaja se v okolici <%= @estate.naslov %>, parcela pa je velika okoli <%= @estate.parcela %> m<sup>2</sup>, znesek, ki ga ponujam je <%= @estate.cena %> €. Spodnja slika je simbolična oz. približek željene nepremičnine.</p>
+<% end %>
+<% if @estate.posredovanje == "Oddaja"%>
+  <p>Oddaja se <%= @estate.tip %>, ki je velika <%= @estate.velikost %> m<sup>2</sup>, nahaja se na naslovu <%= @estate.naslov %>, parcela pa je velika <%= @estate.parcela %> m<sup>2</sup>, ki je na voljo za <%= @estate.cena %> € na mesec.</p>
+<% end %>
+<% if @estate.posredovanje == "Najem"%>
+  <p>Za najem se išče <%= @estate.tip %>, ki je velika okoli <%= @estate.velikost %> m<sup>2</sup>, nahaja se v okolici <%= @estate.naslov %>, parcela pa je velika okoli <%= @estate.parcela %> m<sup>2</sup>, znesek, ki ga ponujam je  <%= @estate.cena %> € na mesec. Spodnja slika je simbolična oz. približek željene nepremičnine.</p>
+<% end %>
+
+<div id="carouselExampleControls" class="carousel slide img" data-ride="carousel">
+  <div class="carousel-inner">
+    <% (0 ... @estate.images.count).each_with_index do |image, index| %>
+
+      <div class="carousel-item <%= 'active' if index == 0 %>">
+        <%= image_tag(@estate.images[image], class: 'd-block w-100') %>
+      </div>
+
+    <% end %>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<br>
+<p class= "text-justify">
+  <%= @estate.opis1 %>
+</p>
+<p class= "text-justify">
+  <%= @estate.opis2 %>
+</p>
+
+<p class="font-weight-bold">Ponudnik in kontakt:</p>
+<ul>
+<li><%= @estate.user.name %> <%= @estate.user.lastname %></li>
+<li><%= @estate.telefon %></li>
+<li><%= @estate.user.email %></li>
+
+
+
+
+
+
+
+</div>
+
+
+<%= show_edit_button(@estate) %> |
+<%= link_to 'Back', estates_path %>
