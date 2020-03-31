@@ -14,6 +14,7 @@ class Api::V1::EstatesController < Api::ApplicationController
     end
 
     def show
+        estate = Estate.find(params[:id])
         render json: { result: estate }.to_json, status: :ok
     end
 
