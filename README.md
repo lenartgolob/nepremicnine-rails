@@ -6,9 +6,6 @@ Nepremicnine.com is a website made for selling, buying and trading with real est
 
 ![Nepremicnine.net](https://raw.githubusercontent.com/lenartgolob/nepremicnine-rails-token/master/img/NepremicnineRails.png)
 
-
-**[View Live Preview](https://lenartgolob.com/nepremicnine)**
-
 ## Download and Installation
 
 * Download the files of this project or `git clone https://github.com/lenartgolob/nepremicnine-rails-token.git`
