@@ -1,5 +1,5 @@
 class Api::V1::EstatesController < Api::ApplicationController
-    before_action :set_estate, only: [:show]
+    before_action :set_estate, only: [:show, :create, :delete]
     skip_before_action :authenticate_request, only: [:index]
 
 
@@ -15,6 +15,28 @@ class Api::V1::EstatesController < Api::ApplicationController
 
     def show
         render json: { result: estate }.to_json, status: :ok
+    end
+
+    def create
+      estate = Estate.new(estate_params)
+      estate.user = @current_api_user
+  
+      respond_to do |format|
+        if estate.save
+          render json: { result: estate }.to_json, status: :ok
+        else
+          render json: { result: estate.errors }.to_json, status: :unprocessable_entity
+        end
+      end
+    end
+
+    def destroy
+      if estate
+        estate.destroy
+        render json: { message: "Estate was successfully destroyed." }.to_json, status: :ok
+      else
+        render json: { error: "Estate was not successfully destroyed." }.to_json, status: :error
+      end
     end
 
     private
