@@ -1,24 +1,29 @@
-# README
+# Nepremicnine.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Nepremicnine.com is a website made for selling, buying and trading with real estate. It was made for educational porposes and it's a clone of an already existing website [nepremicnine.net](https://nepremicnine.net). This website is meant to look professionaly and allow users to post pictures and description of their real estate and than others users can see that add and buy the real estate. It automaticaly places the real estates by their category. You can upload as many real estates as you wish, also you can edit and delete them. It is also customized for the admin of the page, because it allows him/her to edit and remove all the posts if they aren't appropriate or outdated.
 
-Things you may want to cover:
+## Preview
 
-* Ruby version
+![lenartgolob.com/nepremicnine](https://raw.githubusercontent.com/lenartgolob/nepremicnine/master/img/about/2019-10-08-11-57-lenartgolob.com.png)
 
-* System dependencies
 
-* Configuration
+**[View Live Preview](https://lenartgolob.com/nepremicnine)**
 
-* Database creation
+## Download and Installation
 
-* Database initialization
+* Download the files of this project or `git clone https://github.com/lenartgolob/nepremicnine-rails-token.git`
+* Run bundle install and it will install all the gemfiles
+* After that you can access the website via link localhost:3000
 
-* How to run the test suite
+## Database
 
-* Services (job queues, cache servers, search engines, etc.)
+### Structure of Database
 
-* Deployment instructions
+Keep in mind the structure of the database, while working on the project. The schema looks like this:
 
-* ...
+![Database schema](https://raw.githubusercontent.com/lenartgolob/nepremicnine/master/img/about/db-struct.PNG)
+
+## Special features
+
+* Facebook login: FB login saves the users email, first name and last name into the database and it sets the password to facebook
+* Google login: Google login saves the users email, first name and last name into the database and it sets the password to google
