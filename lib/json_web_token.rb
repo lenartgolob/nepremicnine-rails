@@ -2,7 +2,7 @@ class JsonWebToken
     class << self
       def encode(payload, expiry = 24.hours.from_now)
         payload[:expiry] = expiry.to_i
-        if Rails.evc.production?
+        if Rails.env.production?
           secret_key_base = ENV['SECRET_KEY_BASE']
         else
           secret_key_base = Rails.application.secrets.secret_key_base
@@ -11,7 +11,7 @@ class JsonWebToken
       end
       
       def decode(token)
-        if Rails.evc.production?
+        if Rails.env.production?
           secret_key_base = ENV['SECRET_KEY_BASE']
         else
           secret_key_base = Rails.application.secrets.secret_key_base
