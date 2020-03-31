@@ -19,25 +19,23 @@ class Api::V1::EstatesController < Api::ApplicationController
     end
 
     def create
-      estate = Estate.new(estate_params)
-      estate.user = @current_api_user
+      @estate = Estate.new(estate_params)
+      @estate.user = @current_api_user
   
       respond_to do |format|
-        if estate.save
-          render json: { result: estate }.to_json, status: :ok
+        if @estate.save
+          render json: { result: @estate }.to_json, status: :ok
         else
-          render json: { result: estate.errors }.to_json, status: :unprocessable_entity
+          render json: { result: @estate.errors }.to_json, status: :unprocessable_entity
         end
       end
     end
 
     def destroy
-      if estate
+        estate = Estate.find(params[:id]) 
         estate.destroy
         render json: { message: "Estate was successfully destroyed." }.to_json, status: :ok
-      else
-        render json: { error: "Estate was not successfully destroyed." }.to_json, status: :error
-      end
+
     end
 
     private
