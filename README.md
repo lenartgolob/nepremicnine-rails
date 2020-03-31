@@ -4,7 +4,7 @@ Nepremicnine.com is a website made for selling, buying and trading with real est
 
 ## Preview
 
-![lenartgolob.com/nepremicnine](https://raw.githubusercontent.com/lenartgolob/nepremicnine/master/img/about/2019-10-08-11-57-lenartgolob.com.png)
+![Nepremicnine.net](https://raw.githubusercontent.com/lenartgolob/nepremicnine-rails-token/master/img/NepremicnineRails.png)
 
 
 **[View Live Preview](https://lenartgolob.com/nepremicnine)**
