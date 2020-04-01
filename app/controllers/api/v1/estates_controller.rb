@@ -1,5 +1,5 @@
 class Api::V1::EstatesController < Api::ApplicationController
-    before_action :set_estate, only: [:show, :create, :delete]
+    before_action :set_estate, only: [:show, :destroy]
     skip_before_action :authenticate_request, only: [:index]
 
 
@@ -20,14 +20,11 @@ class Api::V1::EstatesController < Api::ApplicationController
 
     def create
       @estate = Estate.new(estate_params)
-      @estate.user = @current_api_user
-  
-      respond_to do |format|
-        if @estate.save
-          render json: { result: @estate }.to_json, status: :ok
-        else
-          render json: { result: @estate.errors }.to_json, status: :unprocessable_entity
-        end
+      @estate.user_id = @current_api_user.id
+      if @estate.save
+        render json: { result: @estate }.to_json, status: :ok
+      else
+        render json: { result: @estate.errors }.to_json, status: :unprocessable_entity
       end
     end
 
@@ -42,5 +39,9 @@ class Api::V1::EstatesController < Api::ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_estate
       @estate = Estate.find(params[:id])
+    end
+
+    def estate_params
+      params.permit(:posredovanje, :ime, :vrsta, :tip, :naslov, :kraj, :lokacija, :telefon, :velikost, :parcela, :cena, :opis1, :opis2)
     end
   end
